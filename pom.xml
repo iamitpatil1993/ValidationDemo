@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.example.validation</groupId>
+	<artifactId>ValidationDemo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>ValidationDemo</name>
+	<description>Bean validation using hibernate validator as reference implemtation</description>
+
+	<dependencies>
+		<!-- This dependency is for interfaces defined in validation specification -->
+		<!-- We need to add them manually because hibernate bean validator do have 
+			transitive dependecy on these interfaces -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>2.0.1.Final</version>
+		</dependency>
+
+		<!-- hibernate reference implementation of validation-api -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>6.0.9.Final</version>
+		</dependency>
+
+		<!-- This is dependency for Unified expression language, which hibernate 
+			requires to parse/process dynamic expressions in validation error messages -->
+		<!-- This is specification dependency -->
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>javax.el-api</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
+		<!-- this is implementation provided by glassish -->
+		<!-- We need these two dependencies in java SE and not in java EE since 
+			servlet or ejb container provide this out of the box -->
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.el</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
