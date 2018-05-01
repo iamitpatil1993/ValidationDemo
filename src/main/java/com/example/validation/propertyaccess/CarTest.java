@@ -1,5 +1,6 @@
 package com.example.validation.propertyaccess;
 
+import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
@@ -8,12 +9,9 @@ import java.util.Set;
 
 import javax.validation.ConstraintViolation;
 
-import org.hamcrest.collection.IsEmptyCollection;
 import org.junit.Test;
 
 import com.example.validation.BaseTest;
-import org.hamcrest.collection.*;
-import static org.hamcrest.Matchers.*;
 
 /**
  * 
