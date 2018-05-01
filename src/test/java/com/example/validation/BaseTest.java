@@ -1,10 +1,10 @@
 package com.example.validation;
 
+import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 
 import org.junit.BeforeClass;
-import javax.validation.Validation;
 
 public class BaseTest {
 
@@ -18,5 +18,4 @@ public class BaseTest {
 		ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
 		validator = validatorFactory.getValidator();
 	}
-
 }

@@ -11,6 +11,7 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Size;
 
+
 public class Employee implements Serializable {
 
 	/**
@@ -18,6 +19,8 @@ public class Employee implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	// We should avoid adding provider specific constraint annotations for portability and we should stick to
+	// constraints provided by javax.validations only
 	@NotNull
 	@Min(value = 0)
 	private Long employeeId;
